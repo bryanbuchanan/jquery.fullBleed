@@ -11,7 +11,7 @@ $('img').fullBleed();
 The alignment of the image can be changed with the `align` property:
 
 ```javascript
-$('img').fullBleed({ align: 'top left' );
+$('img').fullBleed({ align: 'top left' });
 ```
 
 Possible values for `align` are:

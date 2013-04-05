@@ -33,7 +33,7 @@
 				// Or, define new size based on height
 				if (newHeight < windowHeight) {
 					var newHeight = windowHeight;
-					var newWidth = newHeight * aspectRatio
+					var newWidth = Math.round(newHeight * aspectRatio);
 				}
 	
 				// Positioning options
@@ -71,16 +71,27 @@
 				$image.css({
 					'width': newWidth + 'px',
 					'height': newHeight + 'px',
-					'top': newPosition[0],
-					'right': newPosition[1],
-					'bottom': newPosition[2],
-					'left': newPosition[3]
+					'top': Math.round(newPosition[0]),
+					'right': Math.round(newPosition[1]),
+					'bottom': Math.round(newPosition[2]),
+					'left': Math.round(newPosition[3])
 				});
-	
+
+			//	if (typeof(redraw) != "undefined") clearTimeout(redraw);
+			//	redraw = setTimeout(function() {
+					$image[0].style.display='none';
+					$image[0].offsetHeight; // no need to store this anywhere, the reference is enough
+					$image[0].style.display='block';
+					console.log('redraw!');
+			//	}, 2000);
+		
 			}
 	
 			// Fire when window is resized
-			$(window).resize(function() { resize($image); });
+			$(window).resize(function() {
+				console.log('resizing');
+				resize($image);
+			});
 
 			// Fire when image is loaded
 			$image.load(function() {

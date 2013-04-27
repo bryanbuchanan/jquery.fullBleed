@@ -4,7 +4,10 @@
 
 		// Defaults
 		parameters = parameters || {};
-		var defaults = { align: 'center center' };
+		var defaults = {
+			align: 'center center',
+			class: ''
+		};
 		parameters = $.extend(defaults, parameters);
 
 		// Browser Detection
@@ -40,9 +43,9 @@
 					'height': '100%',
 					'position': 'absolute',
 					'top': 0,
-					'left': 0,
-					'opacity': 1
+					'left': 0
 				});
+				if (parameters.class != "") $div.addClass(parameters.class);
 				$(this).replaceWith($div);
 		
 /* IE 7/8
@@ -56,6 +59,9 @@
 				// Style precedents
 				$image.parent().css({ overflow: 'hidden' });
 				$image.css({ position: 'absolute' });
+				
+				// Option class
+				if (parameters.class != "") $image.addClass(parameters.class);
 	
 				function resize() {
 

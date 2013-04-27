@@ -25,3 +25,7 @@ Possible values for `align` are:
 - bottom left
 - bottom center
 - bottom right
+
+## Progressive Enhancement
+
+Modern browsers use the CSS3 background-size: cover method of scaling, while IE 7/8 use the old school javascript scaling.

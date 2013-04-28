@@ -6,7 +6,7 @@
 		parameters = parameters || {};
 		var defaults = {
 			align: 'center center',
-			class: ''
+			className: ''
 		};
 		parameters = $.extend(defaults, parameters);
 
@@ -45,10 +45,11 @@
 					'top': 0,
 					'left': 0
 				});
-				if (parameters.class != "") $div.addClass(parameters.class);
+				if (parameters.className != "") $div.addClass(parameters.className);
 				$(this).replaceWith($div);
 		
-/* IE 7/8
+/* Javascript Method
+- IE 7/8
 -------------------------------------------------------------- */
 
 			} else {
@@ -60,8 +61,8 @@
 				$image.parent().css({ overflow: 'hidden' });
 				$image.css({ position: 'absolute' });
 				
-				// Option class
-				if (parameters.class != "") $image.addClass(parameters.class);
+				// Optional class name
+				if (parameters.className != "") $image.addClass(parameters.className);
 	
 				function resize() {
 
@@ -125,11 +126,8 @@
 		
 				}
 	
-				// Fire when window is resized
-				$(window).resize(function() {
-					console.log('resizing');
-					resize($image);
-				});
+				// Resize image when window is resized
+				$(window).resize(function() { resize($image); });
 
 				// Fire when image is loaded
 				$image.load(function() {
@@ -141,8 +139,6 @@
 					});
 					// Initial resize
 					resize($this);
-					// Show image
-					$this.css({ opacity: 1 });
 				}).each(function() {
 					// Fire load function anyway if image is grabbed from the cache
 					if (this.complete) $(this).load();

@@ -41,5 +41,5 @@ Possible values for `align` are:
 An optional class can be added to the targeted elements, which can be useful when referencing the images in CSS, because the img elements are converted to divs for modern browsers.
 
 ```javascript
-$('img').fullBleed({ class: ‘img’ });
+$('img').fullBleed({ class: 'img' });
 ```

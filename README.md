@@ -10,9 +10,9 @@ $('img').fullBleed();
 
 ## Progressive Enhancement
 
-For modern browsers, the img elements are converted to divs with a background image so they can take advantage of the CSS3 “background-size: cover“ property.
+For modern browsers, the img elements are converted to divs with a background image so they can take advantage of the CSS3 “background-size: cover“ property. This provides much faster resizing and smoother anti-aliasing, especially in WebKit-based browsers.
 
-IE 7/8 leave the img elements in place and use javascript to do the scaling.
+IE 7 & 8 leave the img elements in place and use javascript to do the scaling.
 
 ## Options
 
